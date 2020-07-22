@@ -1,0 +1,87 @@
+// Styling for the navbar
+#mainNav {
+  background-color: $gray-900;
+  .navbar-toggler {
+    font-size: 12px;
+    right: 0;
+    padding: 13px;
+    text-transform: uppercase;
+    color: white;
+    border: 0;
+    background-color: $primary;
+    @include heading-font;
+  }
+  .navbar-brand {
+    background-image: url('../img/logo/logo-white.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 60px;
+    height: 55px;
+  }
+  .navbar-nav {
+    .nav-item {
+      .nav-link {
+        font-size: 90%;
+        font-weight: 400;
+        padding: 0.75em 0;
+        letter-spacing: 1px;
+        color: #000;
+        @include heading-font;
+        &.active,
+        &:hover {
+          color: $primary;
+        }
+      }
+    }
+  }
+  &.navbar-shrink {
+    .navbar-brand {
+      background-image: url('../img/logo/logo-white.png');
+    }
+    .navbar-nav .nav-item .nav-link {
+      color: #fff;
+    }
+  }
+}
+@media(min-width:992px) {
+  #mainNav {
+    padding-top: 25px;
+    padding-bottom: 25px;
+    -webkit-transition: padding-top 0.3s, padding-bottom 0.3s;
+    -moz-transition: padding-top 0.3s, padding-bottom 0.3s;
+    transition: padding-top 0.3s, padding-bottom 0.3s;
+    border: none;
+    background-color: transparent;
+    .navbar-brand {
+      display: block;
+      width: 100px;
+      height: 92px;
+      background-image: url('../img/logo/logo-black.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center center;
+      -webkit-transition: all 0.3s;
+      -moz-transition: all 0.3s;
+      transition: all 0.3s;
+    }
+    .navbar-nav {
+      .nav-item {
+        .nav-link {
+          padding: 1.1em 1em !important;
+        }
+      }
+    }
+    &.navbar-shrink {
+      padding-top: 0;
+      padding-bottom: 0;
+      background-color: $gray-900;
+      .navbar-brand {
+        padding: 12px 0;
+        width: 60px;
+        height: 55px;
+        margin: 12px 0;
+      }
+    }
+  }
+}

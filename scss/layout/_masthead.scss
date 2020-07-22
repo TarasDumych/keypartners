@@ -1,0 +1,75 @@
+// Styling for the masthead
+header.masthead {
+  position: relative;
+  text-align: center;
+  color: white;
+  // background-image: url('../img/header-bg.jpg');
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: center center;
+  background-size: cover;
+  .intro-text {
+    padding-top: 150px;
+    padding-bottom: 100px;
+    .btn-primary {
+      opacity: .9;
+    }
+    .intro-lead-in {
+      font-size: 22px;
+      font-style: italic;
+      line-height: 22px;
+      margin-bottom: 25px;
+      @include serif-font;
+    }
+    .intro-heading {
+      font-size: 50px;
+      font-weight: 700;
+      line-height: 50px;
+      margin-bottom: 25px;
+      @include heading-font;
+
+      @media (max-width: 768px) {
+        font-size: 38px;
+      }
+    }
+  }
+}
+
+#mainSlider {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  .slick-list {
+    height: 100%
+  }
+  .slick-track {
+    height: 100%;
+  }
+  div {
+    background-size: cover;
+    background-position: center;
+  }
+}
+
+@media(min-width:768px) {
+  header.masthead {
+    .intro-text {
+      padding-top: 300px;
+      padding-bottom: 200px;
+      .intro-lead-in {
+        font-size: 40px;
+        font-style: italic;
+        line-height: 40px;
+        margin-bottom: 25px;
+        @include serif-font;
+      }
+      .intro-heading {
+        font-size: 75px;
+        font-weight: 700;
+        line-height: 75px;
+        margin-bottom: 50px;
+        @include heading-font;
+      }
+    }
+  }
+}
