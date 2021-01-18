@@ -3,7 +3,7 @@ header.masthead {
   position: relative;
   text-align: center;
   color: white;
-  // background-image: url('../img/header-bg.jpg');
+  // background-image: url('../dist/img/header-bg.jpg');
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-position: center center;
@@ -47,7 +47,7 @@ header.masthead {
   }
   div {
     background-size: cover;
-    background-position: center;
+    background-position: center top 10%;
   }
 }
 

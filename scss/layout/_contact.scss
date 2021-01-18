@@ -1,7 +1,7 @@
 // Styling for the contact section
 section#contact {
   background-color: $gray-900;
-  background-image: url('../img/map-image.png');
+  background-image: url('../dist/img/map-image.png');
   background-repeat: no-repeat;
   background-position: center;
   .section-heading {
@@ -13,6 +13,11 @@ section#contact {
   }
   .form-group {
     margin-bottom: 25px;
+
+    label {
+      display: none;
+    }
+
     input,
     textarea {
       padding: 20px;
@@ -52,10 +57,12 @@ section#contact {
 
 section#contactt {
   .map-container {
-    background-image: url('../img/map.jpg');
+    background-image: url('../dist/img/map.jpg');
     background-position: center center;
     background-repeat: no-repeat;
-    padding-top: 56%;
     width: 100%;
+    background-size: cover;
+    max-height: 500px;
+    height: 1000px;
   }
 }

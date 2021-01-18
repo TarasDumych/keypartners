@@ -113,11 +113,19 @@ img::-moz-selection {
   color: white;
   border: 0;
   background-color: #7595a0;
+  outline: none;
   font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 }
 
+@media (max-width: 992px) {
+  #mainNav .navbar-toggler {
+    display: flex;
+    align-items: center;
+  }
+}
+
 #mainNav .navbar-brand {
-  background-image: url("../img/logo/logo-white.png");
+  background-image: url("../dist/img/logo/logo-white.png");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -130,7 +138,7 @@ img::-moz-selection {
   font-weight: 400;
   padding: 0.75em 0;
   letter-spacing: 1px;
-  color: #000;
+  color: #fff;
   font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 }
 
@@ -139,7 +147,7 @@ img::-moz-selection {
 }
 
 #mainNav.navbar-shrink .navbar-brand {
-  background-image: url("../img/logo/logo-white.png");
+  background-image: url("../dist/img/logo/logo-white.png");
 }
 
 #mainNav.navbar-shrink .navbar-nav .nav-item .nav-link {
@@ -158,7 +166,7 @@ img::-moz-selection {
     display: block;
     width: 100px;
     height: 92px;
-    background-image: url("../img/logo/logo-black.png");
+    background-image: url("../dist/img/logo/logo-black.png");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center center;
@@ -166,6 +174,7 @@ img::-moz-selection {
   }
   #mainNav .navbar-nav .nav-item .nav-link {
     padding: 1.1em 1em !important;
+    color: #000;
   }
   #mainNav.navbar-shrink {
     padding-top: 0;
@@ -237,7 +246,7 @@ header.masthead .intro-text .intro-heading {
 
 #mainSlider div {
   background-size: cover;
-  background-position: center;
+  background-position: center top 10%;
 }
 
 @media (min-width: 768px) {
@@ -266,6 +275,17 @@ header.masthead .intro-text .intro-heading {
   text-transform: none;
 }
 
+.service-icon-block {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 125px;
+  height: 125px;
+  background-color: #7595a0;
+  border-radius: 100%;
+  margin: 0 auto;
+}
+
 .team-member {
   margin-bottom: 50px;
   text-align: center;
@@ -289,7 +309,7 @@ header.masthead .intro-text .intro-heading {
 
 section#contact {
   background-color: #212529;
-  background-image: url("../img/map-image.png");
+  background-image: url("../dist/img/map-image.png");
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -306,6 +326,10 @@ section#contact .section-heading {
 
 section#contact .form-group {
   margin-bottom: 25px;
+}
+
+section#contact .form-group label {
+  display: none;
 }
 
 section#contact .form-group input,
@@ -351,11 +375,13 @@ section#contact :-ms-input-placeholder {
 }
 
 section#contactt .map-container {
-  background-image: url("../img/map.jpg");
+  background-image: url("../dist/img/map.jpg");
   background-position: center center;
   background-repeat: no-repeat;
-  padding-top: 56%;
   width: 100%;
+  background-size: cover;
+  max-height: 500px;
+  height: 1000px;
 }
 
 .footer {

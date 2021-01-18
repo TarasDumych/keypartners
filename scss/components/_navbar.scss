@@ -9,10 +9,16 @@
     color: white;
     border: 0;
     background-color: $primary;
+    outline: none;
     @include heading-font;
+
+    @media (max-width: 992px) {
+      display: flex;
+      align-items: center;
+    }
   }
   .navbar-brand {
-    background-image: url('../img/logo/logo-white.png');
+    background-image: url('../dist/img/logo/logo-white.png');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -26,7 +32,7 @@
         font-weight: 400;
         padding: 0.75em 0;
         letter-spacing: 1px;
-        color: #000;
+        color: #fff;
         @include heading-font;
         &.active,
         &:hover {
@@ -37,7 +43,7 @@
   }
   &.navbar-shrink {
     .navbar-brand {
-      background-image: url('../img/logo/logo-white.png');
+      background-image: url('../dist/img/logo/logo-white.png');
     }
     .navbar-nav .nav-item .nav-link {
       color: #fff;
@@ -57,7 +63,7 @@
       display: block;
       width: 100px;
       height: 92px;
-      background-image: url('../img/logo/logo-black.png');
+      background-image: url('../dist/img/logo/logo-black.png');
       background-size: contain;
       background-repeat: no-repeat;
       background-position: center center;
@@ -69,6 +75,7 @@
       .nav-item {
         .nav-link {
           padding: 1.1em 1em !important;
+          color: #000;
         }
       }
     }

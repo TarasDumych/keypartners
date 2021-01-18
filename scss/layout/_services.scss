@@ -3,3 +3,14 @@
   margin: 15px 0;
   text-transform: none;
 }
+
+.service-icon-block {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 125px;
+  height: 125px;
+  background-color: #7595a0;
+  border-radius: 100%;
+  margin: 0 auto;
+}
