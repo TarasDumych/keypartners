@@ -1,9 +1,13 @@
 // Styling for the contact section
 section#contact {
   background-color: $gray-900;
-  background-image: url('../dist/img/map-image.png');
   background-repeat: no-repeat;
   background-position: center;
+
+  .visible {
+    background-image: url('../dist/img/map-image.png');
+  }
+
   .section-heading {
     color: $white;
 
@@ -15,7 +19,9 @@ section#contact {
     margin-bottom: 25px;
 
     label {
-      display: none;
+      position: absolute;
+      opacity: 0;
+      // display: none;
     }
 
     input,
@@ -57,12 +63,15 @@ section#contact {
 
 section#contactt {
   .map-container {
-    background-image: url('../dist/img/map.jpg');
     background-position: center center;
     background-repeat: no-repeat;
     width: 100%;
     background-size: cover;
     max-height: 500px;
     height: 1000px;
+
+    &.visible {
+      background-image: url('../dist/img/map.jpg');
+    }
   }
 }

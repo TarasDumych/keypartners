@@ -11,7 +11,7 @@ const merge = require("merge-stream");
 const plumber = require("gulp-plumber");
 const rename = require("gulp-rename");
 const sass = require("gulp-sass");
-const uglify = require("gulp-uglify");
+const terser = require("gulp-terser");
 const imagemin = require('gulp-imagemin');
 
 // BrowserSync
@@ -86,15 +86,15 @@ function js() {
   return gulp
     .src([
       './js/*.js',
-      '!./js/*.min.js',
-      '!./js/contact_me.js',
-      '!./js/jqBootstrapValidation.js'
+      // '!./js/*.min.js',
+      // '!./js/contact_me.js',
+      // '!./js/jqBootstrapValidation.js'
     ])
-    .pipe(uglify())
+    .pipe(terser())
     .pipe(rename({
       suffix: '.min'
     }))
-    .pipe(gulp.dest('./js'))
+    .pipe(gulp.dest('dist/js/'))
     .pipe(browsersync.stream());
 }
 

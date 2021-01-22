@@ -7,22 +7,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Адвокатське об’єднання «КЕЙ ПАРТНЕРС» пропонує якісні юридичні послуги широкого спектру в Івано-Франківську та по Україні. Ми створені для швидкого та результативного вирішення ваших юридичних питань. Гнучкість, клієнтоорієнтованість, ефективність –принципи нашої роботи. Запис на консультацію тут">
     <meta name="author" content="">
+    <meta http-equiv="Cache-Control" content="public">
+    <meta http-equiv="Content-Encoding" content="gzip">
     <link rel="shortcut icon" href="/dist/img/favicon.ico" type="image/x-icon">
     <link rel="icon" href="/dist/img/favicon.ico" type="image/x-icon">
 
     <title>АО «КЕЙ ПАРТНЕРС»</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="vendor/bootstrap/css/bootstrap.min.css" as="style" rel="stylesheet preload prefetch">
 
     <!-- Custom fonts for this template -->
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
-    <link href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" rel="stylesheet" type="text/css">
+    <link as="style" rel="stylesheet preload prefetch" href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" type="text/css" crossorigin="anonymous">
+    <!--<link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic&display=swap' rel='stylesheet'>-->
+    <link as="style" rel="stylesheet preload prefetch" href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700&display=swap' type="text/css" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" as="style" rel="stylesheet preload prefetch">
 
     <!-- Custom styles for this template -->
-    <link href="css/agency.min.css" rel="stylesheet">
+    <link href="css/agency.min.css" as="style" rel="stylesheet preload prefetch">
 
   </head>
 
@@ -132,7 +134,7 @@
         <div class="row">
           <div class="col-sm-6">
             <div class="team-member">
-              <img class="mx-auto rounded-circle" src="dist/img/team/2.jpg" alt="Надія Щадей">
+              <img class="mx-auto rounded-circle lazy" data-src="dist/img/team/2.jpg" alt="Надія Щадей" width="225" height="225"/>
               <h4>Надія Щадей</h4>
               <p class="text-muted">Адвокат, керуючий партнер</p>
               <ul class="list-inline social-buttons">
@@ -146,7 +148,7 @@
           </div>
           <div class="col-sm-6">
             <div class="team-member">
-              <img class="mx-auto rounded-circle" src="dist/img/team/1.jpg" alt="Оксана Думич">
+              <img class="mx-auto rounded-circle lazy" data-src="dist/img/team/1.jpg" alt="Оксана Думич" width="225" height="225"/>
               <h4>Оксана Думич</h4>
               <p class="text-muted">Адвокат, керуючий партнер</p>
               <ul class="list-inline social-buttons">
@@ -217,7 +219,7 @@
     </section>
 
       <!-- Contact -->
-    <section class="page-section" id="contactt" style="padding-bottom: 0;">
+    <section class="page-section lazy-background" id="contactt" style="padding-bottom: 0;">
       <div class="container">
         <div class="row">
           <div class="col-lg-12 text-center">
@@ -248,7 +250,7 @@
         </div>
       </div>
       <a href="https://www.google.com/maps/place/Адвокатське+Об'єднання+'КЕЙ+ПАРТНЕРС'/@48.9197583,24.7072675,17z/data=!4m5!3m4!1s0x4730c1d4ce95eb03:0x532fe5e3dabb4b40!8m2!3d48.9197583!4d24.7094562">
-        <div class="map-container">
+        <div class="map-container lazy-background">
         </div>
       </a>
     </section>
@@ -258,12 +260,7 @@
       <div class="container">
         <div class="row align-items-center">
           <div class="col">
-            <span class="copyright">
-              Copyright &copy; Key Partners
-              <script>
-                document.write(new Date().getFullYear());
-              </script>
-            </span>
+            <span class="copyright"></span>
           </div>
           <div class="col-md-auto">
             <ul class="list-inline social-buttons">
@@ -286,13 +283,13 @@
     <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
     <!-- Contact form JavaScript -->
-    <script src="js/jqBootstrapValidation.js"></script>
-    <script src="js/contact_me.js"></script>
+    <script src="dist/js/jqBootstrapValidation.min.js"></script>
+    <script src="dist/js/contact_me.min.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
     <!-- Custom scripts for this template -->
-    <script src="js/agency.min.js"></script>
+    <script src="dist/js/agency.min.js"></script>
 
   </body>
 
