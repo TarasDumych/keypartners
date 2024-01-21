@@ -6015,7 +6015,7 @@ img::-moz-selection {
   }
 }
 #mainNav .navbar-brand {
-  background-image: url("../dist/img/logo/logo-white.png");
+  background-image: url("../dist/img/logo/logo-white.webp");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -6034,7 +6034,7 @@ img::-moz-selection {
   color: #7595a0;
 }
 #mainNav.navbar-shrink .navbar-brand {
-  background-image: url("../dist/img/logo/logo-white.png");
+  background-image: url("../dist/img/logo/logo-white.webp");
 }
 #mainNav.navbar-shrink .navbar-nav .nav-item .nav-link {
   color: #fff;
@@ -6052,7 +6052,7 @@ img::-moz-selection {
     display: block;
     width: 100px;
     height: 92px;
-    background-image: url("../dist/img/logo/logo-black.png");
+    background-image: url("../dist/img/logo/logo-black.webp");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center center;
