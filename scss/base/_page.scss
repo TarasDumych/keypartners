@@ -42,7 +42,6 @@ h6 {
     font-style: italic;
     margin-bottom: 75px;
     text-transform: none;
-    @include serif-font;
   }
 }
 @media(min-width:768px) {
