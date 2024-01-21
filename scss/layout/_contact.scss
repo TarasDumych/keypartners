@@ -1,67 +1,5 @@
 // Styling for the contact section
 section#contact {
-  background-color: $gray-900;
-  background-repeat: no-repeat;
-  background-position: center;
-
-  &.visible {
-    background-image: url('../dist/img/map-image.png');
-  }
-
-  .section-heading {
-    color: $white;
-
-    @media (max-width: 768px) {
-      font-size: 32px;
-    }
-  }
-  .form-group {
-    margin-bottom: 25px;
-
-    label {
-      position: absolute;
-      opacity: 0;
-      // display: none;
-    }
-
-    input,
-    textarea {
-      padding: 20px;
-    }
-    input.form-control {
-      height: auto;
-    }
-    textarea.form-control {
-      height: 157px;
-    }
-  }
-  .form-control:focus {
-    border-color: $primary;
-    box-shadow: none;
-  }
-  ::-webkit-input-placeholder {
-    font-weight: 700;
-    color: $gray-400;
-    @include heading-font;
-  }
-  :-moz-placeholder {
-    font-weight: 700;
-    color: $gray-400;
-    @include heading-font;
-  }
-  ::-moz-placeholder {
-    font-weight: 700;
-    color: $gray-400;
-    @include heading-font;
-  }
-  :-ms-input-placeholder {
-    font-weight: 700;
-    color: $gray-400;
-    @include heading-font;
-  }
-}
-
-section#contactt {
   .map-container {
     background-position: center center;
     background-repeat: no-repeat;
@@ -71,7 +9,7 @@ section#contactt {
     height: 1000px;
 
     &.visible {
-      background-image: url('../dist/img/map.jpg');
+      background-image: url('../dist/img/map.webp');
     }
   }
 }
