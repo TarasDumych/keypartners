@@ -1,18 +1,20 @@
-"use strict";
-
 // Load plugins
-const autoprefixer = require("gulp-autoprefixer");
-const browsersync = require("browser-sync").create();
-const cleanCSS = require("gulp-clean-css");
-const del = require("del");
-const gulp = require("gulp");
-const header = require("gulp-header");
-const merge = require("merge-stream");
-const plumber = require("gulp-plumber");
-const rename = require("gulp-rename");
-const sass = require("gulp-sass");
-const terser = require("gulp-terser");
-const imagemin = require('gulp-imagemin');
+import autoprefixer from "gulp-autoprefixer";
+import browserSyncLib from "browser-sync";
+const browsersync = browserSyncLib.create();
+import cleanCSS from "gulp-clean-css";
+import del from "del";
+import gulp from "gulp";
+import header from "gulp-header";
+import merge from "merge-stream";
+import plumber from "gulp-plumber";
+import rename from "gulp-rename";
+import gulpSass from 'gulp-sass';
+import * as sass from 'sass';
+import terser from "gulp-terser";
+import imagemin from 'gulp-imagemin';
+
+const sassCompiler = gulpSass(sass);
 
 // BrowserSync
 function browserSync(done) {
@@ -32,7 +34,7 @@ function browserSyncReload(done) {
 }
 
 // Clean vendor
-function clean() {
+function cleanVendor() {
   return del(["./vendor/"]);
 }
 
@@ -60,15 +62,15 @@ function modules() {
 }
 
 // CSS task
-function css() {
+function cssTask() {
   return gulp
     .src("./scss/**/*.scss")
     .pipe(plumber())
-    .pipe(sass({
+    .pipe(sassCompiler({
       outputStyle: "expanded",
       includePaths: "./node_modules",
     }))
-    .on("error", sass.logError)
+    .on("error", sassCompiler.logError)
     .pipe(autoprefixer({
       cascade: false
     }))
@@ -82,13 +84,12 @@ function css() {
 }
 
 // JS task
-function js() {
+function jsTask() {
   return gulp
     .src([
       './js/*.js',
-      // '!./js/*.min.js',
-      // '!./js/contact_me.js',
-      // '!./js/jqBootstrapValidation.js'
+      '!./js/*.min.js',
+      // Additional exclusions can be added here
     ])
     .pipe(terser())
     .pipe(rename({
@@ -98,37 +99,32 @@ function js() {
     .pipe(browsersync.stream());
 }
 
-function images(done) {
+function imagesTask(done) {
   gulp.src('img/**/*')
     .pipe(imagemin())
     .pipe(gulp.dest('dist/img/'))
-
-  // gulp.src('img/team/*')
-  //   .pipe(imagemin())
-  //   .pipe(gulp.dest('dist/images/team'))
-
   done();
 }
 
 // Watch files
 function watchFiles() {
-  gulp.watch("./scss/**/*", css);
-  gulp.watch(["./js/**/*", "!./js/**/*.min.js"], js);
+  gulp.watch("./scss/**/*", cssTask);
+  gulp.watch(["./js/**/*", "!./js/**/*.min.js"], jsTask);
   gulp.watch("./**/*.html", browserSyncReload);
-  // gulp.watch("./img/**/*", images);
+  gulp.watch("./img/**/*", imagesTask);
 }
 
 // Define complex tasks
-const vendor = gulp.series(clean, modules);
-const build = gulp.series(vendor, gulp.parallel(css, js, images));
-const watch = gulp.series(build, gulp.parallel(watchFiles, browserSync));
+const vendorTask = gulp.series(cleanVendor, modules);
+const buildTask = gulp.series(vendorTask, gulp.parallel(cssTask, jsTask, imagesTask));
+const watchTask = gulp.series(buildTask, gulp.parallel(watchFiles, browserSync));
 
 // Export tasks
-exports.css = css;
-exports.js = js;
-exports.clean = clean;
-exports.vendor = vendor;
-exports.build = build;
-exports.watch = watch;
-exports.minifyImages = images;
-exports.default = build;
+export const css = cssTask;
+export const js = jsTask;
+export const clean = cleanVendor;
+export const vendor = vendorTask;
+export const build = buildTask;
+export const watch = watchTask;
+export const minifyImages = imagesTask;
+export default build;

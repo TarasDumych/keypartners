@@ -2,6 +2,15 @@
 @import "base/variables.scss";
 @import "base/mixins.scss";
 
+// Override container max-widths
+$container-max-widths: (
+  sm: 100%,  // 100% width for sm breakpoint
+  md: 100%,  // 100% width for md breakpoint
+  lg: 960px, // max-width for lg breakpoint and above
+  xl: 1140px, // Default Bootstrap value or your custom value
+  xxl: 1320px // Default Bootstrap value or your custom value
+);
+
 // @import "node_modules/bootstrap/scss/bootstrap";
 
 // Required
